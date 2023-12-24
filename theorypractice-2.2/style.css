@@ -1,0 +1,74 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+html {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'PT Sans', 'Arial', sans-serif;
+  color: #0C1014;      
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* stylelint-disable-next-line */
+    min-height: calc(100 * var(--vh, 1vh));
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.table {
+    width: 100%;
+    overflow: auto;
+}
+
+.table table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table td,
+.table th {
+    border: 1px solid #E5266E;
+    padding: 5px;
+}
+
+.table td:first-child {
+    min-width: 60px;
+}
+
+.table td:nth-child(2) {
+    min-width: 60px;
+}
+
+.table td:nth-child(3) {
+    min-width: 300px;
+}
+
+.table td:nth-child(4) {
+    min-width: 650px;
+}

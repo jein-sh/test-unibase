@@ -1,0 +1,30 @@
+const arr = [10, 12, 15, 21];
+
+// этот код выводит в консоль (4)Bad: undefined, т.к. при объвлении переменной через var она доступна в глобальной области видимости, 
+// и к моменту выполнения кода через setTimeout на каждой итерации цикла значение i равно 4, а arr[4] это undefined
+
+for (var i = 0; i < arr.length; i++) {
+  setTimeout(function() {
+    console.log(arr[i] > 13 ? `Good: ${arr[i]}` : `Bad: ${arr[i]}`)
+  }, 3000)
+}
+
+// чтобы получить в консоли  Bad: 10, Bad: 12, Good: 15, Good: надо использовать let, 
+// тогда переменная создается в блочной области видимости и доступна в пределах итерации
+
+for (let i = 0; i < arr.length; i++) {
+  console.log(i)
+  setTimeout(function() {
+    console.log(arr[i] > 13 ? `Good: ${arr[i]}` : `Bad: ${arr[i]}`)
+  }, 3000)
+};
+
+// либо обернуть функцию в еще одну самовызывающуюся функцию, передав ей значение i как аргумент
+
+for (var i = 0; i < arr.length; i++) {
+  setTimeout(function(j) {
+    return function() {
+      console.log(arr[j] > 13 ? `Good: ${arr[j]}` : `Bad: ${arr[j]}`)
+    }
+  }(i), 3000);
+}

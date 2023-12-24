@@ -1,0 +1,159 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+html {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'PT Sans', 'Arial', sans-serif;
+  color: #0C1014;      
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.visually-hidden {
+    position: absolute;
+  
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+  
+    white-space: nowrap;
+  
+    border: 0;
+  
+    clip: rect(0 0 0 0);
+    clip-path: inset(100%);
+}
+
+input {
+  border-radius: 0;
+}
+
+input:hover,
+input:focus {
+    border: none;
+    outline: none;
+}
+
+input::placeholder {
+    opacity: 0.6;
+}
+
+input[type="text"] {
+  appearance: none;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* stylelint-disable-next-line */
+    min-height: calc(100 * var(--vh, 1vh));
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.search {
+    margin: 40px 0;
+}
+
+.table {
+    width: 100%;
+    overflow: auto;
+}
+
+.table table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table td,
+.table th {
+    border: 1px solid #E5266E;
+    padding: 5px;
+}
+
+.table td:first-child {
+    min-width: 60px;
+}
+
+.table td:nth-child(2) {
+    min-width: 60px;
+}
+
+.table td:nth-child(3) {
+    min-width: 300px;
+}
+
+.table td:nth-child(4) {
+    min-width: 650px;
+}
+
+.form__input {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+    border-radius: 2px;
+    border: 1px solid #D6DADE;
+    transition: border 0.3s ease;
+    padding: 8px 16px;
+    min-height: 56px;
+   justify-content: center;
+}
+
+.form__input label {
+    color: #6A6E72;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.form__icon {
+    position: absolute;
+    top: 50%;
+    right: 17px;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form__input input {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 0;
+    border: none;
+}
+
+.form__input:hover,
+.form__input:focus {
+    border-color: #0C1014;
+    outline: none;
+}
