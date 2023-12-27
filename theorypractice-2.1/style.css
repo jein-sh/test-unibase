@@ -139,10 +139,10 @@ button,
 .modal__content {
     position: relative;
     width: 100%;
-    max-width: 754px;
+    width: 754px;
     background-color: #ffffff;
     padding : 53px 98px;
-    border-radius: 20px;
+    border-radius: 8px;
     transform: scale(1.2);
     transition: transform 0.3s ease;
 }
@@ -178,7 +178,7 @@ button,
     font-style: normal;
     font-weight: 800;
     line-height: 34px; 
-    margin: 0 0 43px;
+    margin: 0 0 36px;
 }
 
 
@@ -197,7 +197,8 @@ button,
     font-size: 14px;
     font-weight: 700;
     line-height: 24px;
-    margin: 0 0 16px;
+    margin: 0 0 14px;
+    text-align: center;
 }
 
 .form__img-wrap {
@@ -216,6 +217,13 @@ button,
     align-items: center;
     background-color: rgba(0, 0, 0, 0.6);
     cursor: pointer;
+}
+
+.form__file svg {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    margin-bottom: 12px;
 }
 
 .form__img-preview {
@@ -253,7 +261,7 @@ button,
 
 .form__img-del {
     position: absolute;
-    top: 10px;
+    top: 8px;
     right: 0;
     display: flex;
     justify-content: center;
@@ -302,10 +310,14 @@ button,
     line-height: 16px;
 }
 
+.form__input .red {
+  margin-right: 4px;
+}
+
 .form__icon {
     position: absolute;
     top: 50%;
-    right: 17px;
+    right: 12px;
     transform: translateY(-50%);
     width: 22px;
     height: 22px;
@@ -348,6 +360,10 @@ button,
     max-width: 600px;
 }
 
+.form .btn {
+    margin-top: 50px;
+}
+
 .btn-text {
     display: flex;
     justify-content: center;
@@ -386,7 +402,7 @@ button,
         flex-direction: column-reverse;
     }
 
-    .form__avatar {
+    .form__img {
         margin: 0 0 20px;
     }
 
