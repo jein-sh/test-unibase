@@ -1,3 +1,4 @@
+
 const TYPES_OF_FILE = ['gif', 'jpg', 'jpeg', 'png'];
 
 const body = document.querySelector('body');
@@ -33,6 +34,14 @@ const initModal = () => {
             closeModal();
         }
     });   
+};
+
+const initMaskInput = () => {
+  const phone = document.getElementById('user-phone');
+  const maskOptions = {
+    mask: '+7 000 000-00-00'
+  };
+  const mask = IMask(phone, maskOptions);
 }
 
 const initPreview = () => {
@@ -70,6 +79,7 @@ window.addEventListener('load', () => {
   document.addEventListener('click', (evt) => {
     if(evt.target.closest('[data-open-modal')) {
       initModal();
+      initMaskInput();
       initPreview();
     }
   });
