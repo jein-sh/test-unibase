@@ -69,18 +69,18 @@
                                 <input type="email" id="user-mail" name="user-mail" placeholder="avc@gmail.com" required>
                             </div>
                         </fieldset>
-                        <div class="form__avatar">
+                        <div class="form__img">
                             <p class="form__img-title"><span class="red">✱</span>Логотип (jpeg, png)</p>
                             <div class="form__img-wrap">                                
-                                <label class="form__img" for="avatar">
-                                    <input type="file" id="avatar" name="avatar" class="visually-hidden" accept=".png, .jpeg, .jpg, .gif" required>
+                                <label class="form__file" for="logo-img">
+                                    <input type="file" id="logo-img" name="logo-img" class="visually-hidden" accept=".png, .jpeg, .jpg, .gif" required>
                                     <svg width="30" height="30" aria-hidden="true">
                                         <use xlink:href="#icon-file"></use>
                                     </svg>
                                     <span class="form__img-text">Выберите файл</span>
-                                    <img src="avatar.jpg" alt="Аватар пользователя" width="163" height="163">
+                                    <span class="form__img-preview"></span>
                                 </label>
-                                <button type="button" class="form__img-del" aria-label="Удалить логотип">
+                                <button type="button" class="form__img-del" aria-label="Удалить логотип" data-file-del>
                                     <svg width="16" height="17" aria-hidden="true">
                                         <use xlink:href="#icon-close"></use>
                                     </svg>  

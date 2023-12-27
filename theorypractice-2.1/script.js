@@ -1,5 +1,8 @@
+const TYPES_OF_FILE = ['gif', 'jpg', 'jpeg', 'png'];
+
 const body = document.querySelector('body');
 const modal = document.querySelector('.modal');
+const imgForm = document.querySelector('.form__img');
 
 const initModal = () => {
     if (!modal) {
@@ -32,11 +35,42 @@ const initModal = () => {
     });   
 }
 
+const initPreview = () => {
+  if (!imgForm) {
+    return;
+  }
+
+  const uploadInput = imgForm.querySelector('input[type=file]');
+  const preview = imgForm.querySelector('.form__img-preview');
+ 
+  uploadInput.addEventListener('change', () => {
+    const imgFile = uploadInput.files[0];
+    const imgFileName = imgFile.name.toLowerCase();
+  
+    const matches = TYPES_OF_FILE.some((it) =>
+      imgFileName.endsWith(it),
+    );
+  
+    if (matches) {
+      const previewImg = document.createElement('img');
+      preview.append(previewImg);
+      previewImg.src = URL.createObjectURL(imgFile);
+    }
+  });
+
+  document.addEventListener('click', (evt) => {
+    if(evt.target.closest('[data-file-del]') && preview.querySelector('img')) {
+      preview.querySelector('img').remove();
+    }
+  });
+};
+
 window.addEventListener('load', () => {
 
   document.addEventListener('click', (evt) => {
     if(evt.target.closest('[data-open-modal')) {
       initModal();
+      initPreview();
     }
   });
 });
